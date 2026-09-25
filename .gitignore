@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dataset data (images, labels, large binaries)
+data/
+dataset/prepared/
+dataset/reports/*.csv
+dataset/reports/*.json
+
+# Model weights
+models/*.pt
+models/*.onnx
+models/*.engine
+
+# Generated outputs
+outputs/*
+!outputs/.gitkeep
+
+# Training outputs
+runs/
+wandb/
+mlruns/
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Jupyter
+.ipynb_checkpoints/

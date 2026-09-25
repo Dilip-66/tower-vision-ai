@@ -1,0 +1,10 @@
+numpy
+pillow
+opencv-python
+pandas
+matplotlib
+scikit-learn
+ultralytics
+fastapi
+uvicorn
+python-multipart
