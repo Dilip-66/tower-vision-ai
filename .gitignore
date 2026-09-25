@@ -26,6 +26,9 @@ dataset/reports/*.csv
 dataset/reports/*.json
 
 # Model weights
+*.pt
+*.onnx
+*.engine
 models/*.pt
 models/*.onnx
 models/*.engine

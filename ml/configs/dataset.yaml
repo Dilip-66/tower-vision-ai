@@ -1,0 +1,20 @@
+# TowerVision AI - YOLO Dataset Configuration
+#
+# NOTE:
+#   `path` is relative to the repository root, so YOLO CLI commands must be
+#   started from the repository root (e.g. `yolo detect train data=ml/configs/dataset.yaml`).
+#   ml/training/verify_dataset.py rewrites this to an absolute path at runtime,
+#   so it works from any working directory.
+
+# Dataset root
+path: data/processed
+
+# Dataset splits
+train: images/train
+val: images/val
+test: images/test
+
+# Classes
+names:
+  0: supporting_tower
+  1: monopole_tower
