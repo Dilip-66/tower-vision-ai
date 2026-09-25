@@ -11,11 +11,14 @@ layout, typography, colour tokens, spacing, breakpoints and micro-animations.
 > is downloaded and no external URL is used. Re-run the prepare step and point
 > `src/lib/data.ts` at the real samples to swap them in.
 >
-> **The wordmark still reads "CANOPY".** `CanopyLogo.tsx` is 12 baked SVG letterform
-> paths with a per-letter bounce animation. Regenerating letterforms would mean
-> redesigning the logo, which is out of scope — drop in a replacement SVG and it is a
-> one-file change. All *textual* branding (alt, `aria-label`, metadata, footer copy)
-> already reads Tower Vision.
+> **The wordmark is generated, not hand-drawn.** `scripts/make_tower_vision_logo.py`
+> rebuilds `src/components/CanopyLogo.tsx` plus the two footer SVGs from the
+> project's own Figtree variable font, so the letterforms are real typeface
+> outlines. Vertical metrics are matched to the previous mark (cap height
+> 33.6px, baseline 34.176px, weight 640 from the measured stem/cap ratio of
+> 0.1657), and each letter is still its own `<g class="logo-letter">` so the
+> `logo-letter-bounce` animation is untouched. Change `TEXT`, `WEIGHT` or
+> `TRACKING` at the top of the script and re-run it to retune the mark.
 
 ## Stack
 
@@ -55,7 +58,7 @@ src/
     CookieBanner.tsx storage-event consent banner
     TestCard.tsx    shared card shell + body + featured ribbon
     RippleRings.tsx 7 staggered expanding blob rings
-    CanopyLogo.tsx  logo with per-letter bounce animation
+    CanopyLogo.tsx  TOWER VISION wordmark, per-letter bounce animation
     Squiggle.tsx    hand-drawn h1 underline
     Icons.tsx       Remix-style icon set
     Pills.tsx       class / status / detected chips
@@ -66,9 +69,10 @@ src/
 public/
   fonts/            16 woff2 subsets
   img/opt/          card imagery (640 / 828 variants)
-  canopy-logo-*.svg
+  tower-vision-logo-{light,dark}.svg   footer wordmark, one ink per theme
 scripts/
   make_placeholder_towers.py  regenerates the placeholder card images
+  make_tower_vision_logo.py   regenerates the wordmark from the Figtree font
 ```
 
 ## Navigation

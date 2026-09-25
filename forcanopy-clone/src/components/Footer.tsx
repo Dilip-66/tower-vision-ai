@@ -62,7 +62,7 @@ export function Footer({ year = 2026 }: { year?: number }) {
                 decoding="async"
                 className="dark-hidden h-[18px] w-auto"
                 style={{ color: "transparent" }}
-                src="/canopy-logo-light.svg"
+                src="/tower-vision-logo-light.svg"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -72,7 +72,7 @@ export function Footer({ year = 2026 }: { year?: number }) {
                 decoding="async"
                 className="light-hidden h-[18px] w-auto"
                 style={{ color: "transparent" }}
-                src="/canopy-logo-dark.svg"
+                src="/tower-vision-logo-dark.svg"
               />
               <span className="whitespace-nowrap text-[13px]! font-sans! font-semibold text-onbackground/80">
                 AI-powered tower detection and visualization using computer vision.

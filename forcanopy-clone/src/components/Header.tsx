@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { CanopyLogo } from "./CanopyLogo";
+import { TowerVisionLogo } from "./TowerVisionLogo";
 
 const NAV_LINKS = [
   { href: "/search?status=active", label: "Detect" },
@@ -60,7 +60,7 @@ export function Header() {
         >
           <div className="flex h-[64px] shrink-0 items-center gap-4 pl-[18px] pr-3">
             <a className="shrink-0" href="/">
-              <CanopyLogo />
+              <TowerVisionLogo />
             </a>
 
             <div className="hidden min-[1024px]:flex min-[1024px]:items-center min-[1024px]:gap-[22px] min-[1180px]:gap-[26px]">
