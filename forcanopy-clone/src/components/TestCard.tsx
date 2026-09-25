@@ -1,4 +1,4 @@
-import type { TestCardData } from "@/lib/data";
+import type { DetectionCard } from "@/lib/data";
 import { DetectedPill, PanelPill, StatusPill } from "./Pills";
 
 const SHELL =
@@ -23,7 +23,7 @@ export function TestCardShell({
   return <div className={`${SHELL} ${className}`}>{children}</div>;
 }
 
-export function TestCardBody({ card }: { card: TestCardData }) {
+export function TestCardBody({ card }: { card: DetectionCard }) {
   return (
     <a
       className="flex flex-1 flex-col p-[18px]"
@@ -42,7 +42,7 @@ export function TestCardBody({ card }: { card: TestCardData }) {
       />
 
       <div className="mb-3 flex flex-wrap items-center gap-1.5">
-        <PanelPill panel={card.panel} />
+        <PanelPill category={card.category} />
         <StatusPill status={card.status} />
       </div>
 
@@ -50,38 +50,36 @@ export function TestCardBody({ card }: { card: TestCardData }) {
         {card.title}
       </h2>
       <p className="text-base! text-onbackground opacity-70 mt-1">
-        {card.brand}
+        {card.source}
       </p>
 
-      {card.progress ? (
+      {card.confidence ? (
         <div className="mt-4">
           <div className="flex items-center gap-2">
             <div className="flex-1 h-2 rounded-full bg-surface2 overflow-hidden">
               <div
                 className="h-full rounded-full transition-all bg-categoryFood"
-                style={{ width: `${card.progress.percent}%` }}
+                style={{ width: `${card.confidence.percent}%` }}
               />
             </div>
             <span className="text-xs text-onbackground opacity-70 whitespace-nowrap">
-              {card.progress.percent}%
+              {card.confidence.percent}%
             </span>
           </div>
           <div className="mt-1 flex items-center justify-between gap-3 text-sm text-onbackground opacity-70">
-            <span>
-              {card.progress.raised} of {card.progress.goal}
-            </span>
-            <span>{card.progress.daysLeft}</span>
+            <span>{card.confidence.region}</span>
+            <span>{card.confidence.note}</span>
           </div>
         </div>
       ) : null}
 
-      {card.resultDate ? (
+      {card.detectedOn ? (
         <div className="mt-4">
           <p className="text-xs! font-semibold uppercase tracking-wider text-onbackground opacity-65">
-            Test data by
+            Detected on
           </p>
           <p className="mt-0.5 text-base! font-semibold text-onbackground">
-            <time dateTime="2026-10-27T19:24:40.085Z">{card.resultDate}</time>
+            <time dateTime="2026-10-27T19:24:40.085Z">{card.detectedOn}</time>
           </p>
         </div>
       ) : null}
@@ -97,9 +95,9 @@ export function TestCardBody({ card }: { card: TestCardData }) {
         </div>
       ) : null}
 
-      {card.screenedNote && card.detected && card.detected.length === 0 ? (
+      {card.status === "No Detection" ? (
         <p className="mt-4 text-xs! font-semibold uppercase tracking-wider text-onbackground opacity-65">
-          No contaminants detected
+          No tower structure detected
         </p>
       ) : null}
 
@@ -113,7 +111,7 @@ export function TestCardBody({ card }: { card: TestCardData }) {
 }
 
 /** The hero "Featured" card — same shell, plus the diagonal ribbon. */
-export function FeaturedTestCard({ card }: { card: TestCardData }) {
+export function FeaturedTestCard({ card }: { card: DetectionCard }) {
   return (
     <div className="relative">
       <div className="featured-ribbon pointer-events-none absolute top-0 left-0 z-10 flex items-center gap-[0.375em] bg-cta px-[1lh] pb-[var(--f)] text-lg leading-[2.6] font-bold text-onCta">

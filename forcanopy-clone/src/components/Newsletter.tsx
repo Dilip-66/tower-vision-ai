@@ -4,11 +4,13 @@ export function Newsletter() {
       <div className="grid w-full grid-cols-1 items-center gap-6 sm:grid-cols-2 sm:gap-8">
         <div className="flex flex-col gap-2">
           <h3 className="text-[26px]! font-semibold tracking-[-0.01em] text-onbackground">
-            Stay in the loop
+            Powered by computer vision
           </h3>
           <p className="text-onbackground opacity-80 text-pretty">
-            Get updates on new test requests and results delivered to your
-            inbox.
+            Built from annotated visual data. The detection pipeline uses a
+            YOLO-based object detection model trained on tower images that are
+            labeled using LabelImg to identify the structural categories used by
+            the model.
           </p>
         </div>
         <div>

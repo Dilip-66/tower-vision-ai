@@ -56,7 +56,7 @@ export function Footer({ year = 2026 }: { year?: number }) {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                alt="Canopy"
+                alt="Tower Vision"
                 width={138}
                 height={24}
                 decoding="async"
@@ -66,7 +66,7 @@ export function Footer({ year = 2026 }: { year?: number }) {
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                alt="Canopy"
+                alt="Tower Vision"
                 width={138}
                 height={24}
                 decoding="async"
@@ -75,7 +75,7 @@ export function Footer({ year = 2026 }: { year?: number }) {
                 src="/canopy-logo-dark.svg"
               />
               <span className="whitespace-nowrap text-[13px]! font-sans! font-semibold text-onbackground/80">
-                Confidence in your food.
+                AI-powered tower detection and visualization using computer vision.
               </span>
             </div>
 
@@ -99,11 +99,9 @@ export function Footer({ year = 2026 }: { year?: number }) {
               isRow ? "text-left" : "text-center"
             }`}
           >
-            © {year} Canopy. All names, logos, and brands appearing on this site
-            are the property of their respective owners. Canopy and its
-            products and services are not endorsed by, sponsored by, or
-            affiliated with these third parties. Any use of such names is for
-            identification purposes only.
+            © {year} Tower Vision. An AI-powered tower vision detection and
+            visualization platform built on a YOLO-based object detection model
+            trained on annotated tower images.
           </p>
         </div>
       </div>
@@ -112,10 +110,10 @@ export function Footer({ year = 2026 }: { year?: number }) {
 }
 
 const FOOTER_LINKS = [
-  { href: "/recalls", label: "Recalls" },
-  { href: "/regulations", label: "Regulation Standards" },
-  { href: "/team", label: "Meet the team" },
-  { href: "/feedback", label: "Feedback" },
+  { href: "/recalls", label: "Detections" },
+  { href: "/regulations", label: "Tower Classes" },
+  { href: "/team", label: "About the Model" },
+  { href: "/feedback", label: "Training Data" },
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/tou", label: "Terms of Use" },
   { href: "/accessibility", label: "Accessibility" },

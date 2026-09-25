@@ -17,25 +17,24 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-[1120px] grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12">
         <div className="flex flex-col gap-6">
           <p className="text-xs! font-bold uppercase tracking-[0.14em] text-onbackground/65">
-            Canopy · Crowdfunded contaminant testing
+            Tower Vision · AI-powered structure detection
           </p>
 
           <h1 className="!text-[clamp(2.5rem,5.6vw,4.75rem)] !leading-[1.02] text-onbackground text-balance max-lg:text-[clamp(2.5rem,8vw,4.75rem)]!">
             <span className="relative inline-block">
-              Independent
+              AI-powered tower vision,
               <Squiggle />
             </span>{" "}
-            lab testing, funded by{" "}
+            built for smarter{" "}
             <span className="px-1 text-onHighlightGold box-decoration-clone [background-image:linear-gradient(var(--highlightGold),var(--highlightGold))] bg-no-repeat [background-size:100%_0.8em] [background-position:0_82%]">
-              everyone
+              detection
             </span>
           </h1>
 
           <p className="text-lg text-onbackground opacity-80 text-pretty lg:max-w-[46ch]">
-            Food labels list ingredients—not contaminants. Browse active test
-            campaigns and pledge alongside others to fund testing at
-            independent, qualified third-party labs—neutral scientists with no
-            stake in the results.
+            Upload a tower image and let our YOLO-based computer vision system
+            identify supported tower structures, visualize detections, and
+            present confidence-based results in seconds.
           </p>
 
           <form
@@ -47,8 +46,8 @@ export function Hero() {
             <SearchIcon className="remixicon h-4 w-4 shrink-0 text-onbackground opacity-65" />
             <input
               type="search"
-              placeholder="Search all test requests"
-              aria-label="Search all test requests"
+              placeholder="Upload a tower image"
+              aria-label="Upload a tower image"
               className="w-full min-w-0 bg-transparent pt-[13px] pb-[7px] text-[15px]! text-onbackground placeholder:text-onbackground/65 focus:outline-none"
               name="q"
             />
@@ -56,7 +55,7 @@ export function Hero() {
               type="submit"
               className="shrink-0 cursor-pointer rounded-xl bg-cta px-4 py-2.5 text-sm font-bold text-onCta transition-colors hover:bg-accent hover:text-onAccent"
             >
-              Search
+              Start Detection
             </button>
           </form>
 
@@ -65,7 +64,7 @@ export function Hero() {
               className="border-b-2 border-accent pb-0.5 text-[15px]! font-bold text-onbackground transition-colors hover:text-accent"
               href="/about"
             >
-              Learn more about how it works →
+              Learn how tower detection works →
             </a>
           </div>
         </div>
@@ -81,7 +80,7 @@ export function Hero() {
             className="inline-flex items-center mt-3 text-lg text-onbackground opacity-80 underline underline-offset-2 hover:opacity-100"
             href="/search?status=active"
           >
-            Browse all open test requests →
+            Browse all detection results →
           </a>
         </div>
       </div>

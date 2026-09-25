@@ -2,26 +2,26 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { THEME_INIT_SCRIPT } from "@/lib/theme-script";
 
+const DESCRIPTION =
+  "AI-powered tower vision detection and visualization. Upload an image and let a YOLO-based computer vision model identify Monopole Tower and Supporting Tower structures, with bounding boxes, class labels, and confidence scores.";
+
 export const metadata: Metadata = {
-  title: "Canopy — Crowdfunded Contaminant Testing",
-  description:
-    "Crowdfund independent contaminant testing for everyday products. Back test requests for food, cosmetics, clothing, and household cleaners.",
-  applicationName: "Canopy",
+  title: "Tower Vision — AI-Powered Tower Detection & Visualization",
+  description: DESCRIPTION,
+  applicationName: "Tower Vision",
   metadataBase: new URL("https://forcanopy.com"),
   openGraph: {
-    title: "Canopy — Crowdfunded Contaminant Testing",
-    description:
-      "Crowdfund independent contaminant testing for everyday products. Back test requests for food, cosmetics, clothing, and household cleaners.",
+    title: "Tower Vision — AI-Powered Tower Detection & Visualization",
+    description: DESCRIPTION,
     url: "https://forcanopy.com",
-    siteName: "Canopy",
+    siteName: "Tower Vision",
     images: [{ url: "https://forcanopy.com/og-image.png", width: 1200, height: 675 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Canopy — Crowdfunded Contaminant Testing",
-    description:
-      "Crowdfund independent contaminant testing for everyday products. Back test requests for food, cosmetics, clothing, and household cleaners.",
+    title: "Tower Vision — AI-Powered Tower Detection & Visualization",
+    description: DESCRIPTION,
     images: ["https://forcanopy.com/og-image.png"],
   },
 };
@@ -34,10 +34,9 @@ export default function RootLayout({
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Canopy",
+    name: "Tower Vision",
     url: "https://forcanopy.com",
-    description:
-      "Crowdfunded contaminant testing for everyday products.",
+    description: DESCRIPTION,
   };
 
   return (

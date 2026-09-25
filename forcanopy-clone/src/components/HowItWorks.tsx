@@ -3,7 +3,7 @@ import { STEPS } from "@/lib/data";
 export function HowItWorks() {
   return (
     <section
-      aria-label="How it works"
+      aria-label="From image to detection"
       className="border-y border-onbackground/5 bg-surface px-4 sm:px-6"
       style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
     >
@@ -13,7 +13,7 @@ export function HowItWorks() {
             How it works
           </p>
           <h2 className="text-onbackground text-balance">
-            From a question on the shelf to <em>published lab data.</em>
+            From image to <em>detection.</em>
           </h2>
         </div>
 

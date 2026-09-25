@@ -1,9 +1,9 @@
+import { CLASS_DESCRIPTIONS } from "@/lib/data";
+
+/** Reuses the existing status colour tokens — only the label is new. */
 const STATUS_STYLES: Record<string, string> = {
-  Active: "bg-statusActive text-onstatusActive",
-  Funded: "bg-statusFunded text-onstatusFunded",
-  Expired: "bg-statusExpired text-onstatusExpired",
-  Cancelled: "bg-statusCancelled text-onstatusCancelled",
-  "Needs Verification": "bg-statusNeedsVerification text-onstatusNeedsVerification",
+  Detected: "bg-statusFunded text-onstatusFunded",
+  "No Detection": "bg-statusCancelled text-onstatusCancelled",
 };
 
 export function StatusPill({ status }: { status: string }) {
@@ -18,10 +18,13 @@ export function StatusPill({ status }: { status: string }) {
   );
 }
 
-export function PanelPill({ panel }: { panel: string }) {
+export function PanelPill({ category }: { category: string }) {
   return (
-    <span className="inline-block rounded-full bg-surface2 px-2.5 py-0.5 text-xs font-semibold text-onbackground">
-      {panel}
+    <span
+      className="inline-block rounded-full bg-surface2 px-2.5 py-0.5 text-xs font-semibold text-onbackground"
+      title={CLASS_DESCRIPTIONS[category as keyof typeof CLASS_DESCRIPTIONS]}
+    >
+      {category}
     </span>
   );
 }

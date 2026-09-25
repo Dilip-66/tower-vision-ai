@@ -5,9 +5,9 @@ import { CanopyLogo } from "./CanopyLogo";
 import { CartIcon, SearchIcon } from "./Icons";
 
 const NAV_LINKS = [
-  { href: "/search?status=active", label: "Fund Tests" },
-  { href: "/test-results", label: "Test Results" },
-  { href: "/about", label: "About" },
+  { href: "/search?status=active", label: "Detect" },
+  { href: "/test-results", label: "Visualize" },
+  { href: "/about", label: "How It Works" },
 ];
 
 const DESKTOP_LINK =
@@ -25,8 +25,8 @@ function SearchForm({ className = "" }: { className?: string }) {
       <SearchIcon className="remixicon h-4 w-4 shrink-0 text-onbackground opacity-65" />
       <input
         type="search"
-        placeholder="Search"
-        aria-label="Search all test requests"
+        placeholder="Search tower images"
+        aria-label="Search tower images"
         className="w-full min-w-0 bg-transparent text-[15px]! text-onbackground placeholder:text-[15px]! placeholder:text-onbackground/65 focus:outline-none"
         name="q"
         defaultValue=""
@@ -97,8 +97,8 @@ export function Header() {
 
             <div className="ml-auto flex shrink-0 items-center gap-[10px]">
               <a
-                aria-label="Search all test requests"
-                title="Search"
+                aria-label="Search tower images"
+                title="Search tower images"
                 className="hidden h-[38px] w-[38px] shrink-0 items-center justify-center rounded-xl border border-onbackground/10 text-onbackground/70 transition-colors hover:border-onbackground hover:text-onbackground min-[1024px]:flex min-[1180px]:hidden"
                 href="/search"
               >
