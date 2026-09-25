@@ -1,8 +1,21 @@
-# Canopy — landing page clone
+# Tower Vision — landing page
 
-A pixel-perfect recreation of the [forcanopy.com](https://www.forcanopy.com/) marketing
-landing page: identical layout, typography, colour tokens, spacing, breakpoints and
-micro-animations, rebuilt from scratch.
+A recreation of the [forcanopy.com](https://www.forcanopy.com/) marketing landing
+page, re-badged for **AI-Powered Tower Vision Detection & Visualization**. Identical
+layout, typography, colour tokens, spacing, breakpoints and micro-animations.
+
+> **Card imagery is placeholder.** The YOLO dataset lives at
+> `tower-vision-ai/data/raw` → `data/interim/annotation/images` (gitignored) and is not
+> present on the machine this was built on, so `public/img/opt/tower-*.png` are
+> locally-drawn placeholders produced by `scripts/make_placeholder_towers.py`. Nothing
+> is downloaded and no external URL is used. Re-run the prepare step and point
+> `src/lib/data.ts` at the real samples to swap them in.
+>
+> **The wordmark still reads "CANOPY".** `CanopyLogo.tsx` is 12 baked SVG letterform
+> paths with a per-letter bounce animation. Regenerating letterforms would mean
+> redesigning the logo, which is out of scope — drop in a replacement SVG and it is a
+> one-file change. All *textual* branding (alt, `aria-label`, metadata, footer copy)
+> already reads Tower Vision.
 
 ## Stack
 
@@ -30,10 +43,12 @@ src/
     layout.tsx      metadata + pre-paint theme script
     page.tsx        page composition
   components/
-    Header.tsx      sticky nav, desktop links, inline search, mobile sheet menu
+    Header.tsx      sticky nav — brand, nav links, theme toggle, Get Started,
+                    mobile sheet menu
     Hero.tsx        animated gradient hero, squiggle underline, featured card
     HowItWorks.tsx  4-step grid
-    RecentTests.tsx snap-scrolling results carousel (arrows + dots)
+    RecentTests.tsx snap-scrolling results carousel (arrows + dots); carries
+                    id="detection", the Get Started anchor target
     CallToAction.tsx dark CTA band with ripple rings
     Newsletter.tsx  subscribe form
     Footer.tsx      ResizeObserver-driven stacked/row layout
@@ -43,16 +58,27 @@ src/
     CanopyLogo.tsx  logo with per-letter bounce animation
     Squiggle.tsx    hand-drawn h1 underline
     Icons.tsx       Remix-style icon set
-    Pills.tsx       panel / status / detected chips
+    Pills.tsx       class / status / detected chips
   lib/
-    data.ts         test-request + step content
+    data.ts         detection results + step content
     ripple.ts       organic blob paths + ring timing
     theme-script.ts pre-paint theme bootstrap
 public/
   fonts/            16 woff2 subsets
-  img/opt/          product imagery (640 / 828 variants)
+  img/opt/          card imagery (640 / 828 variants)
   canopy-logo-*.svg
+scripts/
+  make_placeholder_towers.py  regenerates the placeholder card images
 ```
+
+## Navigation
+
+The navbar exposes brand, `Detect` / `Visualize` / `How It Works`, the theme toggle
+and a single **Get Started** call to action. Search, cart, login and sign-up were
+removed. Get Started is an in-page anchor to `#detection` (the existing
+detection/results section) — it reuses the pre-existing sign-up button classes
+verbatim, and keeps the original `min-[1024px]` visibility so the bar's proportions
+are unchanged at every breakpoint.
 
 ## Fidelity notes
 

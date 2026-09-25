@@ -53,7 +53,10 @@ export function RecentTests() {
   }, [sync, RECENT.length]);
 
   return (
-    <section className="mx-auto flex max-w-[1120px] flex-col gap-8 px-4 py-14 sm:px-6 sm:py-20">
+    <section
+      id="detection"
+      className="mx-auto flex max-w-[1120px] flex-col gap-8 px-4 py-14 sm:px-6 sm:py-20"
+    >
       <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div className="flex max-w-[60ch] flex-col gap-3">
           <p className="text-xs! font-bold uppercase tracking-[0.14em] text-onbackground/65">

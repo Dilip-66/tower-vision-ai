@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CanopyLogo } from "./CanopyLogo";
-import { CartIcon, SearchIcon } from "./Icons";
 
 const NAV_LINKS = [
   { href: "/search?status=active", label: "Detect" },
@@ -15,25 +14,6 @@ const DESKTOP_LINK =
 
 const MOBILE_LINK =
   "rounded-lg px-5 py-2.5 font-title text-[36px]! font-semibold tracking-[-0.02em] text-onbackground transition-colors hover:text-accent ";
-
-function SearchForm({ className = "" }: { className?: string }) {
-  return (
-    <form
-      role="search"
-      className={`flex items-center gap-2 rounded-xl border border-onbackground/10 bg-surface px-3.5 py-[8px] min-w-0 min-[1180px]:min-w-[130px] transition-colors focus-within:border-onbackground/40 focus-within:ring-2 focus-within:ring-cta w-full ${className}`}
-    >
-      <SearchIcon className="remixicon h-4 w-4 shrink-0 text-onbackground opacity-65" />
-      <input
-        type="search"
-        placeholder="Search tower images"
-        aria-label="Search tower images"
-        className="w-full min-w-0 bg-transparent text-[15px]! text-onbackground placeholder:text-[15px]! placeholder:text-onbackground/65 focus:outline-none"
-        name="q"
-        defaultValue=""
-      />
-    </form>
-  );
-}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -91,29 +71,7 @@ export function Header() {
               ))}
             </div>
 
-            <div className="mx-auto hidden min-w-0 max-w-[320px] flex-1 min-[1180px]:flex">
-              <SearchForm />
-            </div>
-
             <div className="ml-auto flex shrink-0 items-center gap-[10px]">
-              <a
-                aria-label="Search tower images"
-                title="Search tower images"
-                className="hidden h-[38px] w-[38px] shrink-0 items-center justify-center rounded-xl border border-onbackground/10 text-onbackground/70 transition-colors hover:border-onbackground hover:text-onbackground min-[1024px]:flex min-[1180px]:hidden"
-                href="/search"
-              >
-                <SearchIcon className="remixicon h-[18px] w-[18px]" />
-              </a>
-
-              <a
-                aria-label="Cart"
-                title="Cart"
-                className="relative flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-xl border transition-colors border-onbackground/10 text-onbackground/70 hover:border-onbackground hover:text-onbackground"
-                href="/cart"
-              >
-                <CartIcon />
-              </a>
-
               <button
                 type="button"
                 aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
@@ -132,16 +90,11 @@ export function Header() {
 
               <div className="hidden min-[1024px]:flex min-[1024px]:items-center min-[1024px]:gap-[10px]">
                 <a
-                  className="font-semibold text-[15px]! transition-colors px-1.5 whitespace-nowrap text-onbackground/70 hover:text-onbackground"
-                  href="/login"
-                >
-                  Login
-                </a>
-                <a
                   className="font-semibold text-[15px]! transition-colors whitespace-nowrap rounded-xl bg-cta px-[18px] py-[10px] font-bold text-onCta hover:bg-accent hover:text-onAccent"
-                  href="/signup"
+                  href="#detection"
+                  onClick={() => setOpen(false)}
                 >
-                  Sign Up
+                  Get Started
                 </a>
               </div>
 
@@ -187,23 +140,17 @@ export function Header() {
                 : "pointer-events-none translate-y-4 opacity-0 duration-150"
             }`}
           >
-            <SearchForm className="mb-6 w-full max-w-[420px]" />
             {NAV_LINKS.map((l) => (
               <a key={l.href} className={MOBILE_LINK} href={l.href}>
                 {l.label}
               </a>
             ))}
             <a
-              className="rounded-lg px-5 py-2.5 text-[18px]! font-semibold text-onbackground/65 transition-colors hover:text-onbackground"
-              href="/login"
-            >
-              Login
-            </a>
-            <a
               className="mt-5 rounded-[14px] bg-cta px-7 py-4 text-[16px]! font-bold text-onCta transition-colors hover:bg-accent hover:text-onAccent"
-              href="/signup"
+              href="#detection"
+              onClick={() => setOpen(false)}
             >
-              Sign Up
+              Get Started
             </a>
             <button
               ref={closeRef}
